@@ -7,7 +7,7 @@ public class unite {
 	 int porte ; 
 	 int porteDeplacement ;
 	 int munition ;
-	 Boolean active ;
+	 Boolean fatigue ;
 	 String couleur ;
 	 int coordoneX ;
 	 int coordoneY ;
@@ -18,7 +18,7 @@ public class unite {
         this.cout = cout;
         this.porte = porte;
         this.munition = munition;
-        this.active = active;
+        this.fatigue = active;
         this.couleur = couleur ;
         this.coordoneX = coordoneX ;
         this.coordoneY = coordoneY ;
@@ -28,20 +28,21 @@ public class unite {
 	
 	public void seDeplacer(int x , int y )
 	{	
-		if(this.coordoneX - x <= this.porteDeplacement || this.coordoneY - y <= this.porteDeplacement)
+		if(this.coordoneX - x <= this.porteDeplacement || this.coordoneY - y <= this.porteDeplacement && fatigue == false)
 		{
 			this.coordoneX = x;
 			this.coordoneY = y;
 		}
 		else
 		{
+			checkfatigue();
 			throw new IllegalArgumentException("Deplacement impossible") ;
 		}		
 	}
 	public void attaquer(unite unite)
 	{
 		//on check la porter
-		if(this.coordoneX - unite.coordoneX <= this.porte && this.coordoneY - unite.coordoneY <= this.porte)
+		if(this.coordoneX - unite.coordoneX <= this.porte && this.coordoneY - unite.coordoneY <= this.porte && this.fatigue == false )
 		{
 			{
 				//On check si la cible est dans la porte
@@ -50,17 +51,19 @@ public class unite {
 					//temporaire
 					unite.pv = unite.pv - (this.pv/3 );
 					System.out.println(unite.nom + " a pris des degats il a : "  + unite.getPv()  + " PV");
+					this.fatigue = true ;
 				}
 			}
 		}
 		else
 		{
+			checkfatigue();
 			throw new IllegalArgumentException("attaque impossible") ;
 		}		
 	}
 	public void capture (Batiments batiments) 
 	{
-		if (this.coordoneX == batiments.coordoneX &&  this.coordoneY == batiments.coordoneY) 
+		if (this.coordoneX == batiments.coordoneX &&  this.coordoneY == batiments.coordoneY && this.fatigue == false) 
 		{
 			batiments.lvL_Capture = batiments.lvL_Capture + this.pv ;
 			
@@ -70,6 +73,26 @@ public class unite {
 				 batiments.couleur = this.couleur ;
 			 }
 		}
+		else 
+		{
+			checkfatigue();	
+			System.out.println("Capture impossible");
+		}
+	}
+	public void checkfatigue()	
+	{
+		if (this.fatigue = true) 
+		{
+			System.out.println("Unité fatigué, elle ne peux faire d'action "); 
+		}
+	}
+	public void fusion (unite unite)
+	{
+		// unite1 fusionne avec unite2 (leurs pv s'additionne jusqu'a un max de 10 PV) et l'entité disparait(?)
+	}
+	public void Attendre () 
+	{
+		// ne sert a rien puisque pas vraiment jouable + systeme de unite a jouer pas codé.
 	}
 	public String getNom() {
 		return nom;
@@ -104,11 +127,11 @@ public class unite {
 	}
 
 	public Boolean isActive() {
-		return active;
+		return fatigue;
 	}
 
 	public void setActive(Boolean active) {
-		this.active = active;
+		this.fatigue = active;
 	}
 
 	public String getCouleur() {

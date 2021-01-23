@@ -7,13 +7,16 @@ public class QG extends Batiments
 	{
 		   super( nom,  lvL_Capture , coordoneX ,coordoneY  , couleur , bonusDef ) ;
 	} 
-	public void checkQG ()
+	public void checkQG (unite unite)
+	// je ne sais selectionner toutes les unites 
 	{
+		unite.fatigue = false ;
 		System.out.println(this.nom +" est capturer a " + this.lvL_Capture + "/ 20 ");
 		if (this.lvL_Capture >= 20)
 		{
 			System.out.println("Equipe " + this.nom + " a perdu");
 		}
+		
 	}	
 }
 

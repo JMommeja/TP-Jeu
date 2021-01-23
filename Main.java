@@ -7,8 +7,8 @@ public class Main {
 		
 		// Debut partie 
 		// On check le QG des 2 equipes 
-		LaCarte.QG_B.checkQG();
-		LaCarte.QG_R.checkQG();
+		LaCarte.QG_B.checkQG(LaCarte.Infanterie_B1);
+		LaCarte.QG_R.checkQG(LaCarte.Infanterie_R1);
 		// Tour rouge 
 		// Joueur Rouge crée une unite aerienne  
 		LaCarte.aeroport_R1.créerunitéAero(LaCarte.J_R);		
@@ -22,9 +22,9 @@ public class Main {
 		// On fait un recap des sous du joueur
 		Joueur.AfficherStat(LaCarte.J_R);
 		// Fin du tour
-		// On check le QG des 2 equipes 
-		LaCarte.QG_B.checkQG();
-		LaCarte.QG_R.checkQG();
+		// On check le QG des 2 equipes 	
+		LaCarte.QG_B.checkQG(LaCarte.Infanterie_B1);
+		LaCarte.QG_R.checkQG(LaCarte.Infanterie_R1);
 		// Tour Bleu
 		// Joueur Bleu crée une unite au sol
 		LaCarte.Industrie_B1.créerunitéSol(LaCarte.J_B);
@@ -34,8 +34,8 @@ public class Main {
 		LaCarte.Infanterie_B1.capture((Batiments)LaCarte.QG_R);
 		
 		// On check le QG des 2 equipes 
-		LaCarte.QG_B.checkQG();
-		LaCarte.QG_R.checkQG();
+		LaCarte.QG_B.checkQG(LaCarte.Infanterie_B1);
+		LaCarte.QG_R.checkQG(LaCarte.Infanterie_R1);
 		
 		//Fin du tour
 		// tour rouge
@@ -54,10 +54,18 @@ public class Main {
 		LaCarte.Infanterie_B1.attaquer((unite)LaCarte.Infanterie_B1);
 		LaCarte.Infanterie_B1.seDeplacer(0,0);
 		LaCarte.Infanterie_B1.capture((Batiments)LaCarte.QG_R);
+		LaCarte.QG_B.checkQG(LaCarte.Infanterie_B1);
+		
+		LaCarte.Infanterie_B1.capture((Batiments)LaCarte.QG_R);
+	
+		LaCarte.QG_B.checkQG(LaCarte.Infanterie_B1);
+		LaCarte.QG_R.checkQG(LaCarte.Infanterie_R1);
+		
 		LaCarte.Infanterie_B1.capture((Batiments)LaCarte.QG_R);
 		
-		LaCarte.QG_B.checkQG();
-		LaCarte.QG_R.checkQG();
+		LaCarte.QG_B.checkQG(LaCarte.Infanterie_B1);
+		LaCarte.QG_R.checkQG(LaCarte.Infanterie_R1);
+		
 	}
 }
 
