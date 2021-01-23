@@ -2,8 +2,7 @@ package aw;
 
 public class Main {
 	
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		carte LaCarte = new carte();
 		
 		// Debut partie 

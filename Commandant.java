@@ -45,7 +45,7 @@ public class Commandant {
 		public void setCapacite(String capacite) {
 			this.capacite = capacite;
 		}
-		public void capacite ()
+		public void capacite (unite unite)
 		{
 			if (this.capacite == "Reparateur" ) 
 			{

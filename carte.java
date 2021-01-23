@@ -25,8 +25,6 @@ public class carte {
 		 J_R = new Joueur ("Joueur_Rouge" , 500);
 		 J_B = new Joueur ("Joueur_Bleu" , 500);
 		
-		ArrayList<unite> unite = new ArrayList<unite>();
-		ArrayList<Batiments> batiments = new ArrayList<Batiments>();
 		ArrayList<Terrain> terrain = new ArrayList<Terrain>();
 		
 		//0_0 a 0_6
