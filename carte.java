@@ -44,7 +44,7 @@ public class carte {
 		Terrain Case1_5=new Terrain ("Plaine",true,"T",1,5);
 		Industrie_B1 =new Industrie ("Industrie",0,1,6,"B",1);
 		//2_0 a 2_6
-		Infanterie_R1 = new unite_terrestre ("Infanterie", 5,100,5,true,"b",2,0,3,10);
+		Infanterie_R1 = new unite_terrestre (" Infanterie_R1", 5,100,5,true,"b",2,0,3,10);
 		Terrain Case2_0=new Terrain ("Plaine",true,"T",2,0);
 		Terrain Case2_1=new Terrain ("Plaine",true,"T",2,1);
 		 usine_B1 = new Usine ("Usine",0,2,2,"B",3,1000);
@@ -52,7 +52,7 @@ public class carte {
 		 Usine_R = new Usine ("Usine",0,2,4,"R",3,1000);
 		Terrain Case2_5=new Terrain ("Plaine",true,"T",2,5);
 		Terrain Case2_6=new Terrain ("Plaine",true,"T",2,6);
-		Infanterie_B1 =new unite_terrestre ("Infanterie", 5,100,5,true,"b",0,1,3,10);
+		Infanterie_B1 =new unite_terrestre (" Infanterie_B1", 5,100,5,true,"b",0,1,3,10);
 		
 		terrain.add(Case0_1);
 		terrain.add(Case0_2);

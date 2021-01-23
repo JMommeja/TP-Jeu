@@ -83,7 +83,7 @@ public class unite {
 	{
 		if (this.fatigue = true) 
 		{
-			System.out.println("Unité fatigué, elle ne peux faire d'action "); 
+			System.out.println("Unité" + this.nom + " fatigué, elle ne peux faire d'action "); 
 		}
 	}
 	public void fusion (unite unite)
